@@ -9,7 +9,19 @@
 pip install requests
 ```
 
-~~修改源码之后~~ 直接运行
+修改源码
+将相关信息填入源码
+
+```
+#目标IP
+Target_address = '******'
+
+#账号密码
+user_data = {'username' : '******', 'password' : '******'}
+```
+取消要使用的代码块的注释
+
+运行
 ```
 python3 lojarticals.py
 ```
