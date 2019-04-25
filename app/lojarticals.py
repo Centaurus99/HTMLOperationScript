@@ -1,7 +1,7 @@
 import requests
 
 #目标IP
-Target_address = '192.168.21.187:2233'
+Target_address = '******'
 
 #账号密码
 user_data = {'username' : '******', 'password' : '******'}
