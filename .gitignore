@@ -1,3 +1,4 @@
-/.vscode/*
-/1.in
-/1.out
+/*
+!/.gitignore
+!/app/
+!/README.md
