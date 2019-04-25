@@ -27,3 +27,9 @@ python3 lojarticals.py
 ### StrOption.py
 
 - 将获取的 `headers` 添加引号便于复制进源码
+
+## TODO
+
+- 交互方式
+- 将数据与程序分离
+
