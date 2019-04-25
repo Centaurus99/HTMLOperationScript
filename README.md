@@ -4,6 +4,8 @@
 
 ## 使用方法
 
+### lojarticals.py
+
 需要安装 `requests` 包
 ```
 pip install requests
@@ -24,6 +26,22 @@ user_data = {'username' : '******', 'password' : '******'}
 运行
 ```
 python3 lojarticals.py
+```
+
+### StrOption.py
+```
+#文件名
+Filename = '1'
+```
+将会从`Filename.in`中逐行读取字符串，将`:`前后的内容分别用引号框起来
+例如：
+Filename.in
+```
+Host: ***.***.***.***
+```
+Filename.out
+```
+'Host' : '***.***.***.***'
 ```
 
 ## 目前已有的功能
