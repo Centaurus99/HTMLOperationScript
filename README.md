@@ -1,6 +1,6 @@
 # HTMLOperationScript
 
-> 基于`python3`与`requests`包,可能是用于爆破校内OJ？
+> 基于`python3.7.3`与`requests`包,可能是用于爆破校内OJ？
 
 ## 使用方法
 
