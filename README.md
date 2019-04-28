@@ -6,30 +6,54 @@
 
 ### lojarticals.py
 
+#### Step1:相关依赖
+
 需要安装 `requests` 包
 ```
 pip install requests
 ```
+如需使用`自动提交`功能还需要`requests_toolbelt`包
+```
+pip install requests_toolbelt
+```
 
-修改源码
+#### Step2:配置文件
 
-将相关信息填入源码
+将配置填入配置文件，文件名默认为`data.in`
+
+目前已有的配置项（配置项`key`不区分大小写，`val`区分大小写）：
+
+- `TargetAddress`: 目标IP
+- `LoginMode`: 登录方式
+    - 默认为`default`即账号密码登录（需自行`F12`抓包获得
+    - `Cookie`/`cookie`为`Cookie`登录（需自行`F12`抓包获得
+- `username`: `default`登录方式下的账号
+- `password`: `default`登录方式下的密码
+- `Cookie`: `Cookie`登录方式下的`Cookie`
+
+输入样例文件
+```
+TargetAddress: ******
+LoginMode: default
+username: ******
+password: ******
+```
 
 ```
-#目标IP
-Target_address = '******'
-
-#账号密码
-user_data = {'username' : '******', 'password' : '******'}
+TargetAddress: ******
+LoginMode: Cookie
+Cookie: ******
 ```
+
+#### Step3:修改代码
 取消要使用的代码块的注释
 
-运行
+#### Step4:运行
 ```
-python3 lojarticals.py
+python3 ojscript.py
 ```
 
-### StrOption.py
+### StrOption.py - by zby
 ```
 #文件名
 Filename = '1'
@@ -51,11 +75,13 @@ Filename.out
 
 ### lojarticals.py
 
+- 账密与`Cookie`两种登录方式
 - 获取页面
 - 自动发帖
 - 自动删帖
 - 自动回复
 - 自动删回复
+- 自动提交
 
 ### StrOption.py
 
@@ -64,5 +90,4 @@ Filename.out
 ## TODO
 
 - 交互方式
-- 将数据与程序分离
-
+- 其他功能

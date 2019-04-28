@@ -176,7 +176,7 @@ for i in range(84,84+30):   #删回复编号
     print(post_res)
 '''
 
-#自动交题
+#自动提交
 '''
 from requests_toolbelt import MultipartEncoder
 for i in range(0,2):
