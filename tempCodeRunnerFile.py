@@ -1,1 +1,1 @@
-level=
+Filename = "data.in"
