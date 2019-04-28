@@ -31,7 +31,7 @@ pip install requests_toolbelt
 - `password`: `default`登录方式下的密码
 - `Cookie`: `Cookie`登录方式下的`Cookie`
 
-输入样例文件
+样例配置文件
 ```
 TargetAddress: ******
 LoginMode: default
@@ -53,7 +53,7 @@ Cookie: ******
 python3 ojscript.py
 ```
 
-### StrOption.py - by zby
+### StrOption.py - by (zby)[https://github.com/hazby2002]
 ```
 #文件名
 Filename = '1'
