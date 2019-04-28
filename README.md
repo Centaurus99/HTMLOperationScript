@@ -53,7 +53,7 @@ Cookie: ******
 python3 ojscript.py
 ```
 
-### StrOption.py - by (zby)[https://github.com/hazby2002]
+### StrOption.py - by [zby](https://github.com/hazby2002)
 ```
 #文件名
 Filename = '1'
