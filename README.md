@@ -4,7 +4,7 @@
 
 ## 使用方法
 
-### lojarticals.py
+### ojscript.py
 
 #### Step1:相关依赖
 
@@ -73,7 +73,7 @@ Filename.out
 
 ## 目前已有的功能
 
-### lojarticals.py
+### ojscript.py
 
 - 账密与`Cookie`两种登录方式
 - 获取页面
