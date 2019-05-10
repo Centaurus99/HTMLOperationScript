@@ -184,7 +184,6 @@ for i in range(84,84+30):   #删回复编号
 try:
     with open(Codename, 'rb') as fin:
         codes = fin.read().decode("UTF+8")
-    print(codes)
 except:
     print("Codefile Error")
     exit(0)
