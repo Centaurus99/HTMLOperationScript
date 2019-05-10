@@ -33,14 +33,14 @@ pip install requests_toolbelt
 
 样例配置文件
 ```
-TargetAddress: ******
+TargetAddress: 127.0.0.1
 LoginMode: default
 username: ******
 password: ******
 ```
 
 ```
-TargetAddress: ******
+TargetAddress: 127.0.0.1
 LoginMode: Cookie
 Cookie: ******
 ```

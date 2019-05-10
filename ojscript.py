@@ -29,6 +29,8 @@ try:
 except:
     print(Filename + ' : TargetAddress is lost')
     exit(0)
+if TargetAddress[0:4].lower() == 'http':
+    print("Warning: TargetAddress don't need 'http'/'https'")
 
 post_headers = {
     'Host' : TargetAddress,
