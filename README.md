@@ -53,6 +53,13 @@ Cookie: ******
 python3 ojscript.py
 ```
 
+#### 自动提交的使用方法
+默认从`code.cpp`中读取代码
+
+文件需要为`UTF+8`格式
+
+可以修改`Codename`来更改代码文件名
+
 ### StrOption.py - by [zby](https://github.com/hazby2002)
 ```
 #文件名

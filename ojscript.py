@@ -3,6 +3,7 @@ import logging
 
 #读入文件名
 Filename = "data.in"
+Codename = 'code.cpp'
 
 Data = {}
 try:
@@ -180,8 +181,16 @@ for i in range(84,84+30):   #删回复编号
 
 #自动提交
 '''
+try:
+    with open(Codename, 'rb') as fin:
+        codes = fin.read().decode("UTF+8")
+    print(codes)
+except:
+    print("Codefile Error")
+    exit(0)
+
 from requests_toolbelt import MultipartEncoder
-for i in range(0,2):
+for i in range(0,1):
     print("----- Case: " + str(i))
 
     #题目编号
@@ -191,9 +200,7 @@ for i in range(0,2):
     #提交代码
     post_data = MultipartEncoder(fields={
         'language': 'cpp11',
-        'code': """
-#include<cstdio>
-int main(){puts("0");}"""
+        'code': codes
         })
     post_headers['Content-Type'] = post_data.content_type
     post_res = requests.post(
