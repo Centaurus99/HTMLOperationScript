@@ -69,6 +69,7 @@ if LoginMode.lower() == 'default':
         exit("Login ERR")
 
     post_headers['Cookie'] = post_res.headers['set-cookie']
+    print('Cookie is: ' + post_headers['Cookie'])
 else:
     if LoginMode.lower() == 'cookie':
         #Cookie登录
