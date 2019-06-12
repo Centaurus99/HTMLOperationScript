@@ -212,3 +212,20 @@ for i in range(0,1):
     
     print(post_res)
 '''
+'''
+#自动加tag
+for i in range(210, 227 + 1):
+    print("----- Problem: " + str(i))
+
+    #tag内容
+    post_data = {
+        'name' : 'NOIP2018'
+    }
+    post_res = requests.post(
+        url = 'http://' + TargetAddress + '/problem/' + str(i) + '/group',
+        headers = post_headers,
+        data = post_data
+    )
+    
+    print(post_res)
+'''
