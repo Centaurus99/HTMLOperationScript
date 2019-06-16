@@ -86,146 +86,141 @@ else:
 logging.info('Login Successfully')
 
 #获取页面
-'''
-get_headers = {
-    'Host' : TargetAddress,
-    'Connection' : 'keep-alive',
-    'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36',
-    'Accept' : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
-    'Accept-Encoding' : 'gzip, deflate',
-    'Accept-Language' : 'zh-CN,zh;q=0.9'
-}
-get_headers['Cookie'] = post_res.headers['set-cookie']
+def GetPage():
+    get_headers = {
+        'Host' : TargetAddress,
+        'Connection' : 'keep-alive',
+        'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36',
+        'Accept' : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+        'Accept-Encoding' : 'gzip, deflate',
+        'Accept-Language' : 'zh-CN,zh;q=0.9'
+    }
+    get_headers['Cookie'] = post_res.headers['set-cookie']
 
-get_res = requests.get(
-    url = 'http://' + TargetAddress + '/admin/info',
-    headers = get_headers
-)
+    get_res = requests.get(
+        url = 'http://' + TargetAddress + '/admin/info',
+        headers = get_headers
+    )
 
-if get_res.status_code == 200:
-    print('GET Successfully')
-    print(get_res.text)
-else:
-    print('GET ERR')
-    print(get_res)
-'''
+    if get_res.status_code == 200:
+        print('GET Successfully')
+        print(get_res.text)
+    else:
+        print('GET ERR')
+        print(get_res)
 
 #自动发帖
-'''
-for i in range(0,1):
-    print("----- Case: " + str(i))
+def NewTopic():
+    for i in range(0,1):
+        print("----- Case: " + str(i))
 
-    #题目编号
-    post_params = {'problem_id' : '1235'}
-    #发帖内容
-    post_data = {
-        'title' : 'test' + str(i),
-        'content' : 'tmp' + str(i)
-    }
-    post_res = requests.post(
-        url = 'http://' + TargetAddress + '/article/0/edit',
-        headers = post_headers,
-        params = post_params,
-        data = post_data
-    )
-    
-    print(post_res)
-'''
+        #题目编号
+        post_params = {'problem_id' : '1235'}
+        #发帖内容
+        post_data = {
+            'title' : 'test' + str(i),
+            'content' : 'tmp' + str(i)
+        }
+        post_res = requests.post(
+            url = 'http://' + TargetAddress + '/article/0/edit',
+            headers = post_headers,
+            params = post_params,
+            data = post_data
+        )
+        
+        print(post_res)
 
 #自动删帖
-'''
-for i in range(10,17):   #删帖编号
-    print("----- Delte: " + str(i))
-    
-    post_res = requests.post(
-        url = 'http://' + TargetAddress + '/article/' + str(i) + '/delete',
-        headers = post_headers
-    )
-    
-    print(post_res)
-'''
+def DelTopic():
+    for i in range(10,17):   #删帖编号
+        print("----- Delte: " + str(i))
+        
+        post_res = requests.post(
+            url = 'http://' + TargetAddress + '/article/' + str(i) + '/delete',
+            headers = post_headers
+        )
+        
+        print(post_res)
 
 #自动回复
-'''
-for i in range(1,1+30):
-    print("----- Case: " + str(i))
+def Reply():
+    for i in range(1,1+30):
+        print("----- Case: " + str(i))
 
-    #题目编号
-    comment_id = 22
-    #回复内容
-    post_data = {
-        'comment' : 'orz hkk ×' + str(i)
-    }
-    post_res = requests.post(
-        url = 'http://' + TargetAddress + '/article/' + str(comment_id) + '/comment',
-        headers = post_headers,
-        data = post_data
-    )
+        #题目编号
+        comment_id = 22
+        #回复内容
+        post_data = {
+            'comment' : 'orz hkk ×' + str(i)
+        }
+        post_res = requests.post(
+            url = 'http://' + TargetAddress + '/article/' + str(comment_id) + '/comment',
+            headers = post_headers,
+            data = post_data
+        )
 
-    print(post_res)
-'''
+        print(post_res)
 
 #自动删回复
-'''
-for i in range(84,84+30):   #删回复编号
-    print("----- Delte: " + str(i))
-    
-    #题目编号
-    comment_id = 22
-    post_res = requests.post(
-        url = 'http://' + TargetAddress + '/article/' + str(comment_id) + '/comment/' + str(i) + '/delete',
-        headers = post_headers
-    )
-    
-    print(post_res)
-'''
+def DelReply():
+    for i in range(84,84+30):   #删回复编号
+        print("----- Delte: " + str(i))
+        
+        #题目编号
+        comment_id = 22
+        post_res = requests.post(
+            url = 'http://' + TargetAddress + '/article/' + str(comment_id) + '/comment/' + str(i) + '/delete',
+            headers = post_headers
+        )
+        
+        print(post_res)
 
 #自动提交
-'''
-try:
-    with open(Codename, 'rb') as fin:
-        codes = fin.read().decode("UTF+8")
-except:
-    print("Codefile Error")
-    exit(0)
+def Submit():
+    try:
+        with open(Codename, 'rb') as fin:
+            codes = fin.read().decode("UTF+8")
+    except:
+        print("Codefile Error")
+        exit(0)
 
-from requests_toolbelt import MultipartEncoder
-for i in range(0,1):
-    print("----- Case: " + str(i))
+    from requests_toolbelt import MultipartEncoder
+    for i in range(0,1):
+        print("----- Case: " + str(i))
 
-    #题目编号
-    comment_id = 3
-    #比赛编号
-    post_params = {'contest_id' : ''}
-    #提交代码
-    post_data = MultipartEncoder(fields={
-        'language': 'cpp11',
-        'code': codes
-        })
-    post_headers['Content-Type'] = post_data.content_type
-    post_res = requests.post(
-        url = 'http://' + TargetAddress + '/problem/' + str(comment_id) + '/submit',
-        headers = post_headers,
-        params = post_params,
-        data = post_data
-    )
-    
-    print(post_res)
-'''
-'''
+        #题目编号
+        comment_id = 3
+        #比赛编号
+        post_params = {'contest_id' : ''}
+        #提交代码
+        post_data = MultipartEncoder(fields={
+            'language': 'cpp11',
+            'code': codes
+            })
+        post_headers['Content-Type'] = post_data.content_type
+        post_res = requests.post(
+            url = 'http://' + TargetAddress + '/problem/' + str(comment_id) + '/submit',
+            headers = post_headers,
+            params = post_params,
+            data = post_data
+        )
+        
+        print(post_res)
+
 #自动加group
-for i in range(210, 227 + 1):
-    print("----- Problem: " + str(i))
+def AddGroup():
+    for i in range(210, 227 + 1):
+        print("----- Problem: " + str(i))
 
-    #group内容
-    post_data = {
-        'name' : 'NOIP2018'
-    }
-    post_res = requests.post(
-        url = 'http://' + TargetAddress + '/problem/' + str(i) + '/group',
-        headers = post_headers,
-        data = post_data
-    )
-    
-    print(post_res)
-'''
+        #group内容
+        post_data = {
+            'name' : 'NOIP2018'
+        }
+        post_res = requests.post(
+            url = 'http://' + TargetAddress + '/problem/' + str(i) + '/group',
+            headers = post_headers,
+            data = post_data
+        )
+        
+        print(post_res)
+
