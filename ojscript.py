@@ -213,11 +213,11 @@ for i in range(0,1):
     print(post_res)
 '''
 '''
-#自动加tag
+#自动加group
 for i in range(210, 227 + 1):
     print("----- Problem: " + str(i))
 
-    #tag内容
+    #group内容
     post_data = {
         'name' : 'NOIP2018'
     }
